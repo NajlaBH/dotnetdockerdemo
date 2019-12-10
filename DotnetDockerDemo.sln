@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetDockerDemo", "DotnetDockerDemo\DotnetDockerDemo.csproj", "{7736650E-1C0A-4890-80C8-C036EC0418AE}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A9BEEBBD-92B6-46CF-8CD0-1D7B8C28956C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7736650E-1C0A-4890-80C8-C036EC0418AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7736650E-1C0A-4890-80C8-C036EC0418AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7736650E-1C0A-4890-80C8-C036EC0418AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7736650E-1C0A-4890-80C8-C036EC0418AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9BEEBBD-92B6-46CF-8CD0-1D7B8C28956C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9BEEBBD-92B6-46CF-8CD0-1D7B8C28956C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9BEEBBD-92B6-46CF-8CD0-1D7B8C28956C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9BEEBBD-92B6-46CF-8CD0-1D7B8C28956C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
