@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Http;
 
 namespace DotnetDockerDemo
 {
@@ -24,6 +25,32 @@ namespace DotnetDockerDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
+
+            services.AddHsts(options =>
+            {
+                options.Preload = true;
+                options.IncludeSubDomains = true;
+                options.MaxAge = TimeSpan.FromDays(360);
+                options.ExcludedHosts.Add("DotnetDockerDemo.com");
+                options.ExcludedHosts.Add("www.DotnetDockerDemo.com");
+            });
+
+            services.AddHttpsRedirection(options =>
+            {
+                options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
+                options.HttpsPort = 5001;
+            });
+
+            // PRODUCTION: IWebHostEnvironment (stored in _env) is injected into the Startup class.
+            /* if (!_env.IsDevelopment())
+            {
+                services.AddHttpsRedirection(options =>
+                {
+                    options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
+                    options.HttpsPort = 443;
+                });
+            }¨*/
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,7 +68,7 @@ namespace DotnetDockerDemo
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseCookiePolicy();
             app.UseRouting();
 
             app.UseAuthorization();
