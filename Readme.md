@@ -37,6 +37,7 @@ You may have to trust the website because it self-signed.
 c)
 => You should see the web app at "https://containerIP"
 This method is unavailable with docker-mac.
+
 ### - References
 * https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/docker/building-net-docker-images?view=aspnetcore-3.1
 
